@@ -2,6 +2,7 @@
 
 ## Chapter 01 : Variables
 
+### Basic Variables
 These variables are declared with `NO-UNDO`.
 That states that no undo handling is wanted for this specific variable in case of a transactional roll-back.
 
@@ -30,4 +31,14 @@ define variable cAdressNr like S_Adresse.AdressNr no-undo.
 
 define variable cChar1 as character format 'x(20)':U no-undo.
 define variable cChar2 like cChar1 no-undo.
+```
+### Arrays
+
+```csharp
+Define variable iArray   as integer   extent 3 init [10,20,35]          no-undo.
+Define variable cArray   as character extent 3 init ['A':U,'B':U,'C':U] no-undo.
+Define variable dArray   as decimal   extent 3 init [10.1,20.2,35.3]    no-undo.
+ 
+/* Individual positions the array is accessed using "[ ]" brackets. */
+/* And the index starts at 1 not 0. The maximum size is 28000 */
 ```
