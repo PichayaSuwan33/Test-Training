@@ -72,6 +72,6 @@ assign
 message iArray. /* Error: you can’t use message to message all of array */
 
 display iArray. 
-```
-Result
-![img1]()
+```  
+Result  
+![img1](./img/Picture1.png)
