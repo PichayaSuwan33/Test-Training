@@ -75,3 +75,18 @@ display iArray.
 ```  
 Result  
 ![img1](./img/Picture1.png)
+  
+---   
+ 
+```csharp
+message iArray[2] | Display iArray[2] /* 20 */
+```
+---  
+  
+    
+If you don't set all extents the remaining will get the last set value 
+```csharp
+define variable cArray   as character extent 10 init ['A':U,'B':U,'C':U] no-undo.
+```
+Result  
+![img1](./img/Picture2.png)
