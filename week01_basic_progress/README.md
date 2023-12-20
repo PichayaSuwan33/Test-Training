@@ -1,6 +1,5 @@
 # Basic Progress Lang
 
-
 ## Define Variable
 ```csharp
 define variable cText   as character no-undo.
