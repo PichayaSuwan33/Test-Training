@@ -34,11 +34,44 @@ define variable cChar2 like cChar1 no-undo.
 ```
 ### Arrays
 
+Individual positions the array is accessed using `"[]"` brackets.  
+And the **index start** at `1` not `0`.   
+The maximum size is 28000
+
 ```csharp
-Define variable iArray   as integer   extent 3 init [10,20,35]          no-undo.
-Define variable cArray   as character extent 3 init ['A':U,'B':U,'C':U] no-undo.
-Define variable dArray   as decimal   extent 3 init [10.1,20.2,35.3]    no-undo.
- 
-/* Individual positions the array is accessed using "[ ]" brackets. */
-/* And the index starts at 1 not 0. The maximum size is 28000 */
+define variable iArray   as integer   extent 3 init [10,20,35]          no-undo.
+define variable cArray   as character extent 3 init ['A':U,'B':U,'C':U] no-undo.
+define variable dArray   as decimal   extent 3 init [10.1,20.2,35.3]    no-undo. 
 ```
+
+**Example**
+```csharp
+/* Define Array with the length 3 and assign values */
+define variable iArray as integer extent 3 init [10,20,35] no-undo.
+```
+or
+
+```csharp
+define variable iArray as integer extent 3 no-undo.
+assign
+  iArray[1] = 10
+  iArray[2] = 20
+  iArray[3] = 35
+  .
+```    
+
+```csharp
+define variable iArray as integer extent 3 no-undo.
+
+assign
+  iArray[1] = 10
+  iArray[2] = 20
+  iArray[3] = 35
+  .
+
+message iArray. /* Error: you can’t use message to message all of array */
+
+display iArray. 
+```
+Result
+![img1]()
