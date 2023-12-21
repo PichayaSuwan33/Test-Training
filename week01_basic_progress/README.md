@@ -111,7 +111,7 @@ Result
    display 'hello:':U.
    ```
      
-What difference between `Messaeg` and `Display`
+What difference between `Message` and `Display`
 
 ![img1](./img/Picture3.png)
 
@@ -127,6 +127,90 @@ update cInput.
 ```
 
 ---
+
+
+**Extra :** You can use command `label` to set name of columns when use `display`
+
+without label name 
+```csharp
+define variable cText as character init 'Hello!':U no-undo.
+
+display cText.
+```
+![img1](./img/Picture4.png)  
+  
+
+with label name
+```csharp
+define variable cText as character init 'Hello!':U no-undo.
+
+display cText label 'Test Message':U.
+```
+![img1](./img/Picture5.png)
+
+---
+
+**Example :**
+
+```csharp
+/* Receive text from the keyboard and display it. */
+define variable cTaxt as character no-undo.
+
+update cTaxt label 'Input':U.
+
+message 'Output: ':U cTaxt.
+```
+
+Input :   
+![img1](./img/Picture6.png)
+
+Output :    
+![img1](./img/Picture7.png)
+
+---
+
+## Chapter 03: Basic Commands
+
+### BEGINS and MATCHES
+
+#### **BEGINS**
+
+`begins` - return **true** if one string begins with another string. 
+
+```csharp
+<String1> begins <String2> 
+```
+If string1 `begins` with (or is equal to) string2 this will return true.   
+Otherwise it will return false. If string two is empty `("")` it will always return **true**. 
+
+**Example :**
+
+```csharp
+define variable cString1 as character no-undo.
+define variable cString2 as character no-undo.
+
+cString1 = 'Hello':U.
+cString2 = 'Hello':U.
+message cString1 begins cString2. /* YES */
+
+cString1 = 'Hello':U.
+cString2 = 'H':U.
+message cString1 begins cString2. /* YES */
+
+cString1 = 'Hello':U.
+cString2 = '':U.
+message cString1 begins cString2. /* YES */
+
+cString1 = 'Hello':U.
+cString2 = 'Hello World!':U.
+message cString1 begins cString2. /* NO */
+
+```
+
+---
+
+#### **MATCHES**
+
 
 
  
