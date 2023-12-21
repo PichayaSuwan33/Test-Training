@@ -259,6 +259,55 @@ Returns **true** if string1 `matches` the wildcard expression :
 length('abc':U)   /* 3 */
 ```
 
+### INDEX
+
+`index` return the position of a string in a string.  
+
+```csharp
+index(source, target) 
+
+index(source, target, starting-position)
+```
+
+`r-index` will to the same thing but search right to left.
+
+```csharp
+r-index(<source>, <target>) 
+
+r-index(<source>, <target>, <starting-position>)
+```
+
+> Search target within source (left to right) and return it's position. If it's missing return `0`.
+ 
+> Position start at `1` not `0`.
+
+
+**Example :**
+```csharp
+ define variable cTaxt as character init 'ABCDEFGHIJ':U no-undo.
+
+ message   index(cTaxt, 'b':U).          /* 2 */
+ message r-index(cTaxt, 'b':U).          /* 2 */
+ message   index(cTaxt, 'E':U, 2).       /* 5 */
+ message   index(cTaxt, 'E':U, 8).       /* 0 */
+ message r-index(cTaxt, 'E':U, 8).       /* 5 */
+
+```
+
+### SUBSTRING
+
+`substring` returns or assigns a part of a string.
+
+```csharp
+substring(<string>, <starting-position>, <length>) 
+```
+
+
+
+
+
+
+
 
 
 
