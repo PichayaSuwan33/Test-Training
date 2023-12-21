@@ -75,14 +75,11 @@ display iArray.
 ```  
 Result  
 ![img1](./img/Picture1.png)
-  
----   
+    
  
 ```csharp
 message iArray[2] | Display iArray[2] /* 20 */
 ```
----  
-  
     
 If you don't set all extents the remaining will get the last set value 
 ```csharp
@@ -92,6 +89,7 @@ Result
 ![img1](./img/Picture2.png)
 
 
+---
 
   
 ## Chapter 02 : Input & Output
@@ -169,7 +167,7 @@ Output :
 
 ---
 
-## Chapter 03: Basic Commands
+## Chapter 03 : Basic Commands
 
 ### BEGINS and MATCHES
 
@@ -210,6 +208,60 @@ message cString1 begins cString2. /* NO */
 ---
 
 #### **MATCHES**
+
+`matches` return **true** if certain wildcard critera is met in a string.
+
+```
+<String1> matches <expression> 
+```
+Returns **true** if string1 `matches` the wildcard expression : 
+  - `*` (asterisk) = 0 to n characters (basically any string of any length)
+
+  - `.` (period) = wildcard for any character (except null) 
+
+**Example**  
+
+```csharp
+ define variable cString1 as character no-undo.
+ define variable cString2 as character no-undo.
+
+ cString1 = 'Hello':U.
+ cString2 = 'Hello':U.
+ message cString1 matches cString2. /* YES */
+
+ cString1 = 'Hello':U.
+ cString2 = 'H*':U.
+ message cString1 matches cString2. /* YES */
+
+ cString1 = 'Hello':U.
+ cString2 = '*O':U.
+ message cString1 matches cString2. /* YES */
+
+ cString1 = 'Hello World!':U.
+ cString2 = 'Hello.World!':U.
+ message cString1 matches cString2. /* YES */
+
+ cString1 = 'Hello World!':U.
+ cString2 = '*Wor...!':U.
+ message cString1 matches cString2. /* NO */
+
+ cString1 = 'Hello World!':U.
+ cString2 = 'Wo*ld!':U.
+ message cString1 matches cString2. /* NO */
+
+```
+
+### LENGTH
+
+`length` return the number of character.
+
+```csharp
+length('abc':U)   /* 3 */
+```
+
+
+
+
 
 
 
