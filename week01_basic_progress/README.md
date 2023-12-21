@@ -90,3 +90,43 @@ define variable cArray   as character extent 10 init ['A':U,'B':U,'C':U] no-undo
 ```
 Result  
 ![img1](./img/Picture2.png)
+
+
+
+  
+## Chapter 02 : Input & Output
+
+### Basic Update and Message/Display
+
+#### Output
+
+1. `message` Everything you want to be displayed.  
+
+   ```csharp
+   message 'hello':U.
+   ```
+2. `display` Everything you want to be displayed.
+
+   ```csharp
+   display 'hello:':U.
+   ```
+     
+What difference between `Messaeg` and `Display`
+
+![img1](./img/Picture3.png)
+
+
+#### Input
+
+`update` – you need to define variable to receive the value 
+
+```csharp
+define variable cInput as character no-undo.
+
+update cInput.
+```
+
+---
+
+
+ 
