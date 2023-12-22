@@ -264,9 +264,9 @@ length('abc':U)   /* 3 */
 `index` return the position of a string in a string.  
 
 ```csharp
-index(source, target) 
+index(<source>, <target>) 
 
-index(source, target, starting-position)
+index(<source>, <target>, <starting-position>)
 ```
 
 `r-index` will to the same thing but search right to left.
@@ -299,8 +299,130 @@ r-index(<source>, <target>, <starting-position>)
 `substring` returns or assigns a part of a string.
 
 ```csharp
+/* Returns "length" characters from "string" starting on position "starting-position" */
 substring(<string>, <starting-position>, <length>) 
+
+/* Returns the rest of "string", starting at position "starting-position" */
+substring(<string>, <starting-position>) 
 ```
+
+**Example :**
+
+```csharp
+define variable cTaxt as character init 'ABCDEFGHIJ':U no-undo.
+
+message substring(cTaxt, 3).            /* CDEFGHIJ */
+message substring(cTaxt, 3, 2).         /* CD */
+```
+
+### CAPS and LC
+
+`caps` make string upper case.
+
+```csharp
+caps('Abc':U).                          /* ABC */
+```
+
+
+`lc` make string lower case.
+
+```csharp
+lc('Abc':U).                            /* abc */
+```
+
+### FILL
+
+`fill` Generates a character string made up of a character string that is repeated a specified number of times. 
+
+```csharp
+fill(<expression>, <repeats>).
+```
+
+**Example**
+
+```csharp
+message fill('Hello':U, 3).  /* HelloHelloHello */
+```
+
+### TRIM 
+
+`trim` removes leading and trailing whitespaces (or other characters).
+
+```csharp
+/* Removes all leading and trailing spaces, tabs, line feeds, carriage returns */
+trim(<string>).
+
+/* Removes all leading and trailing "characters" */
+trim(<string>, <character>).
+```
+
+`left-trim` and `right-trim` does the same thing but only leading or trailing.
+
+**Example :**
+```csharp
+message trim(' [a] ':U).             /*[a]*/
+message trim(' [a] ':U, 'a':U).       /* [a] */ <-- no change
+message trim('abcda':U, 'a':U).       /*bcd*/
+message left-trim('abcda':U, 'a':U).  /*bcda*/
+message right-trim('abcda':U, 'a':U). /*abcd*/
+```
+
+### REPLACE
+
+`replace` replaces a string within a string.
+
+```
+replcae(<string>, <from-string>, <to-string>). 
+```
+**Example :**
+
+```csharp
+message replace('eat':U, 'e':U, 'T':U).       /* Tat */
+```
+
+### DATE Commands
+
+```csharp
+message today.               /* 20/12/23 */
+message year(today).         /* 2023 */
+message month(today).        /* 12 */
+message weekday(today).      /* 4 */ <-- Sunday is 1 to Saturday is 7
+message day(today).          /* 20 */
+```
+### LIST Commands
+
+**"List"** There are a number of functions and methods for working with comma (or other character) separated lists in Progress 4GL. 
+
+Example of **"List"** :
+
+```csharp
+define variable cList as character no-undo.
+
+/* Using comma, the default delimiter */
+cList = 'One,Two,Five':U.
+```
+
+`num-entry` returns the number of entries in a list. You can optionally specify delimiter,comma is default.
+
+**Example :**
+
+```csharp
+define variable cList as character no-undo.
+
+/* Using comma, the default delimiter */
+cList = 'One,Two,Five':U.
+message num-entries(cList).       /* 3 */
+
+/* Using another delimiter, semilcolon */
+cList = 'One;Two;Five':U.
+message num-entries(cList,';':U). /* 3 */
+```
+
+
+
+
+
+
 
 
 
