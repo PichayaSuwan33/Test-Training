@@ -202,8 +202,6 @@ message cString1 begins cString2. /* NO */
 
 ```
 
----
-
 #### **MATCHES**
 
 `matches` return **true** if certain wildcard critera is met in a string.
