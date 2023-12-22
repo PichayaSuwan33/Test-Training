@@ -106,7 +106,7 @@ Result
 2. `display` Everything you want to be displayed.
 
    ```csharp
-   display 'hello:':U.
+   display 'hello':U.
    ```
      
 What difference between `Message` and `Display`
@@ -176,7 +176,7 @@ Output :
 <String1> begins <String2> 
 ```
 If string1 `begins` with (or is equal to) string2 this will return true.   
-Otherwise it will return false. If string two is empty `("")` it will always return **true**. 
+Otherwise it will return false. If string two is empty `('')` it will always return **true**. 
 
 **Example :**
 
