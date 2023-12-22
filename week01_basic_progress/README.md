@@ -124,8 +124,6 @@ define variable cInput as character no-undo.
 update cInput.
 ```
 
----
-
 
 **Extra :** You can use command `label` to set name of columns when use `display`
 
@@ -146,7 +144,6 @@ display cText label 'Test Message':U.
 ```
 ![img1](./img/Picture5.png)
 
----
 
 **Example :**
 
