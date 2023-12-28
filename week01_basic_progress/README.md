@@ -167,6 +167,71 @@ Input :
 Output :  
 ![img1](./img/Picture7.png)
 
+<br/>
+
+### Basic Import & Export
+
+#### IMPORT 
+
+Reads a line from an input file.
+
+```csharp
+define stream sInput.
+
+define variable cReadLine as character no-undo.
+
+input stream sInput from value('D:\data.csv':U).
+
+repeat:
+
+  import stream sInput unformatted cReadLine.
+
+  message cReadLine.
+
+end. /* repeat: */  
+
+input stream sInput close.
+```
+
+```py
+define variable cCaptital as character no-undo.
+
+define variable cCountry  as character no-undo.
+
+input from value('D:\city.csv':U).
+
+repeat:
+
+  import delimiter ';':U cCaptital cCountry.
+
+  message cCaptital skip cCountry.
+
+end. /* repeat: */
+
+input close.
+```
+**D:\city.csv**
+```
+Bangkok;Thailand
+Tokyo;Japan
+```
+
+#### EXPORT
+
+Converts data to a standard character format and displays it to the current output destination (except when the current output destination is the screen).
+
+use `put` command to write line.
+
+```csharp
+define stream sOutput.
+
+output stream sOutput to value('D:\update.log':U).
+
+put stream 'Hello World':U unformatted.
+
+output stream sOutput close.
+```
+
 ---
 
 ## Chapter 03 : Basic Commands
@@ -207,6 +272,7 @@ cString2 = 'Hello World!':U.
 message cString1 begins cString2. /* NO */
 
 ```
+
 
 #### **MATCHES**
 
@@ -251,8 +317,9 @@ Returns **true** if string1 `matches` the wildcard expression :
  cString1 = 'Hello World!':U.
  cString2 = 'Wo*ld!':U.
  message cString1 matches cString2. /* NO */
-
 ```
+
+<br/>
 
 ### LENGTH
 
@@ -261,6 +328,7 @@ Returns **true** if string1 `matches` the wildcard expression :
 ```csharp
 length('abc':U)   /* 3 */
 ```
+<br/>
 
 ### INDEX
 
@@ -296,6 +364,7 @@ r-index(<source>, <target>, <starting-position>)
  message r-index(cTaxt, 'E':U, 8).       /* 5 */
 
 ```
+<br/>
 
 ### SUBSTRING
 
@@ -317,6 +386,7 @@ define variable cTaxt as character init 'ABCDEFGHIJ':U no-undo.
 message substring(cTaxt, 3).            /* CDEFGHIJ */
 message substring(cTaxt, 3, 2).         /* CD */
 ```
+<br/>
 
 ### CAPS and LC
 
@@ -332,6 +402,8 @@ caps('Abc':U).                          /* ABC */
 lc('Abc':U).                            /* abc */
 ```
 
+<br/>
+
 ### FILL
 
 `fill` Generates a character string made up of a character string that is repeated a specified number of times.
@@ -345,6 +417,8 @@ fill(<expression>, <repeats>).
 ```csharp
 message fill('Hello':U, 3).  /* HelloHelloHello */
 ```
+
+<br/>
 
 ### TRIM
 
@@ -369,6 +443,7 @@ message trim('abcda':U, 'a':U).       /*bcd*/
 message left-trim('abcda':U, 'a':U).  /*bcda*/
 message right-trim('abcda':U, 'a':U). /*abcd*/
 ```
+<br/>
 
 ### REPLACE
 
@@ -383,6 +458,8 @@ replcae(<string>, <from-string>, <to-string>).
 ```csharp
 message replace('eat':U, 'e':U, 'T':U).       /* Tat */
 ```
+<br/>
+
 
 ### DATE Commands
 
@@ -393,6 +470,7 @@ message month(today).        /* 12 */
 message weekday(today).      /* 4 */ <-- Sunday is 1 to Saturday is 7
 message day(today).          /* 20 */
 ```
+<br/>
 
 ### LIST Commands
 
