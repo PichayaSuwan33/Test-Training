@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<dsDR_Instance-Depl xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ttDRC_Instance-PDO>
+    <DRC_Instance_ID>XDCUIListenerUtilSvc.cls</DRC_Instance_ID>
+    <DRC_Instance_Obj>PA1775:XpA:8d901098fd047fb3c014aa6a642fe007</DRC_Instance_Obj>
+    <DRC_Class_Obj>PA1771:pA:ed0c8e6fd86cf186dd11675533578c42</DRC_Class_Obj>
+    <Directory>x/adm/cls</Directory>
+  </ttDRC_Instance-PDO>
+  <ttDBM_Description-Inst>
+    <Description1>Utility Class for Instance Listener UI</Description1>
+    <Description2/>
+    <Owning_Obj>PA1775:XpA:8d901098fd047fb3c014aa6a642fe007</Owning_Obj>
+    <Sprache>D</Sprache>
+    <Reconcile_Obj/>
+  </ttDBM_Description-Inst>
+  <ttDBM_ShortDescription-Inst>
+    <Owning_Obj>PA1775:XpA:8d901098fd047fb3c014aa6a642fe007</Owning_Obj>
+    <ShortDesc1>Utility Class for Instance Listener UI</ShortDesc1>
+    <ShortDesc2/>
+    <ShortDesc3/>
+    <ShortDesc4/>
+    <Sprache>D</Sprache>
+    <Reconcile_Obj/>
+  </ttDBM_ShortDescription-Inst>
+  <ttDRC_CustomizedObject>
+    <CustomLevel>X</CustomLevel>
+    <DRC_Table_Obj>PA0302:pA:b77a4bad0cdf338cdb115d4c3a9a1277</DRC_Table_Obj>
+    <Owning_Obj>PA1775:XpA:8d901098fd047fb3c014aa6a642fe007</Owning_Obj>
+    <DRC_Field_Obj>new</DRC_Field_Obj>
+    <DRC_CustomizedObject_Obj>PA1726:XpA:8d901098fd047fb3c014aa6a40ff581f</DRC_CustomizedObject_Obj>
+    <CustomFieldValueChar/>
+    <CustomFieldValueDec xsi:nil="true"/>
+    <CustomFieldValueDate xsi:nil="true"/>
+    <ModificationID/>
+    <CustomFieldValueBlob xsi:nil="true"/>
+    <isNewCustomizing>true</isNewCustomizing>
+  </ttDRC_CustomizedObject>
+</dsDR_Instance-Depl>
